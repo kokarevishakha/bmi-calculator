@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto+Mono:ital@1&family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto+Mono:ital,wght@1,200&family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <style>
+        button{
+            background-color: rgb(195, 6, 6);
+            color: black;
+            border: none;
+            padding: 10px 20px; 
+            cursor: pointer; 
+            border-radius: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto Mono', monospace;
+            font-family: 'Roboto Slab', serif;
+        }
+        form {
+            border: 2px solid royalblue; 
+            padding: 30px; 
+            background-color: rgb(213, 243, 244);
+            cursor: pointer; 
+            border-radius: 20px;
+            max-width: 800px;
+            margin: auto;
+            box-shadow: 15px 15px 15px -3px royalblue
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        h1,h4{
+            padding-left: 190px;
+            color: brown;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto Mono', monospace;
+            letter-spacing: 3px;
+        
+        }
+        label{
+            color: brown;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto Mono', monospace;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    
+    <form>
+        <h1>BMI CALCULATOR</h1>
+        <h4>Enter the Height and Weight</h4>
+        <table>
+            <tbody>
+                <tr>
+                    <td><label for="height">Height</label></td>
+                    <td><input type="text" required id="height" placeholder="Enter the Height"></td>
+                </tr>
+                <tr>
+                    <td><label for="weight">Weight</label></td>
+                    <td><input type="text" required id="weight" placeholder="Enter the Weight"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="button" onclick="calculateBMI()">CALCULATE</button></td>
+                </tr>
+                <tr>
+                    <td><label for="bmi">BMI</label></td>
+                    <td><input type="text" id="bmi" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <script>
+        function calculateBMI() {
+            var height = parseFloat(document.getElementById('height').value);
+            var weight = parseFloat(document.getElementById('weight').value);
+            var bmi = weight / (height * height);
+            document.getElementById('bmi').value = bmi.toFixed(2);
+        }
+    </script>
+</body>
+
+
+</html>
